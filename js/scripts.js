@@ -1,5 +1,16 @@
-// Player outcomes:
+// Business Logic
 
-// Roll a 1: End turn
+function Dice(roll) {
+this.roll = roll
+}
 
-// Roll a 2 - 6: Player's turn continues and dice total is added to round total
+Dice.prototype.rollDice = function() {
+return Math.floor((Math.random() * 6) + 1);
+}
+
+
+
+// UI Logic
+
+let roll1 = new Dice()
+roll1.rollDice()
