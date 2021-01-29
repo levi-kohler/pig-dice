@@ -1,23 +1,12 @@
 // Business Logic
 let rollDice = function() {
-  return Math.floor((Math.random() * 6) + 1); // ?? maybe?
+  return Math.floor((Math.random() * 6) + 1);
 }
 
-function Player(turn) {
-  //this.name = name
+function Player() {
   this.roll = 0;
   this.roundScore = 0;
   this.totalScore = 0;
-  this.turn = turn;
-}
-
-Player.prototype.rollDice = function() {
-this.roll = Math.floor((Math.random() * 6) + 1);
-if (this.roll === 1) {
-  return this.roundScore = 0;
-  } else {
-  return this.roundScore += this.roll;
-  }
 }
 
 //check if player rolled 1
@@ -42,35 +31,20 @@ Player.prototype.checkWin = function() {
   }
 }
 
-Player.prototype.addScore = function() {
-  this.totalScore += score;
-}
-
-Player.prototype.playerSwitcher = function() {
-  if (this.turn === 1) {
-return this.turn = 2;
-  }
-}
-
-
 
 // UI Logic -----------------------------------------------------------
 $(document).ready(function() {
-  let player1 = new Player("Player 1", 1);
-  let player2 = new Player("Player 2", 2);
-  let player1Round = 0;
-  let player2Round = 0;
-  let player1Total = 0;
-  let player2Total = 0;
+  let player1 = new Player();
+  let player2 = new Player();
 
 
-  //Louie fuckin around here:
-  //We want the dice to be rolled when the player clicks the roll button
+  
   $("button#player1roll").click(function(event) {
     player1.roll = rollDice();
-    $("#diceroll1").text(player1.roll); //the roll score is displayed in diceroll1 span
+    $("#diceroll1").text(player1.roll);
     player1.rollOne()
-    $("#roundscore1").text(player1.roundScore); //the score for the round is updated here
+    $("#roundscore1").text(player1.roundScore);
+
   });
 
   $("button#player1hold").click(function(event) {
@@ -81,6 +55,21 @@ $(document).ready(function() {
     player1.checkWin();
   })
 
+  $("button#player2roll").click(function(event) {
+    player2.roll = rollDice();
+    $("#diceroll2").text(player2.roll);
+    player2.rollOne()
+    $("#roundscore2").text(player2.roundScore);
+
+  });
+
+  $("button#player2hold").click(function(event) {
+    player2.hold();
+    $("#totalscore2").text(player2.totalScore);
+    $("#roundscore2").empty();
+    $("#diceroll2").empty();
+    player2.checkWin();
+  })
 
 
 });
