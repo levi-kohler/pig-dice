@@ -31,14 +31,11 @@ Player.prototype.checkWin = function() {
   }
 }
 
-
 // UI Logic -----------------------------------------------------------
 $(document).ready(function() {
   let player1 = new Player();
   let player2 = new Player();
 
-
-  
   $("button#player1roll").click(function(event) {
     player1.roll = rollDice();
     $("#diceroll1").text(player1.roll);
@@ -61,9 +58,9 @@ $(document).ready(function() {
     $("button#player1roll").hide();
     $("button#player1hold").hide();
     $("button#player2roll").show();
-    $("button#player2hold").show();
-    
+    $("button#player2hold").show(); 
   });
+
   $("button#player2roll").click(function(event) {
     player2.roll = rollDice();
     $("#diceroll2").text(player2.roll);
@@ -76,6 +73,7 @@ $(document).ready(function() {
       $("button#player2hold").hide();
     }
   });
+
   $("button#player2hold").click(function(event) {
     player2.hold();
     $("#totalscore2").text(player2.totalScore);
