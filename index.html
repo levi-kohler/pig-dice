@@ -9,13 +9,30 @@
 </head>
 
 <body>
-<div class = "container">
+<div class="container">
   <h1>Let's play Pig Dice!</h1>
-  <button class="btn btn-success" id="go">Roll!</button>
-  <button class="btn btn-info" id="hold">Hold 'em!</button>
-  <div id="output">
+  <hr>
+  <div class="row">
+
+    <div class="col-6">
+      <h2>Player 1:</h2>
+      <button class="btn btn-success" id="player1roll">Roll!</button>
+      <button class="btn btn-info" id="player1hold">Hold 'em!</button>
+      <h3>Dice Roll: <span id="diceroll1"></span><h3>
+      <h3>Round Score: <span id="roundscore1"></span><h3>
+      <h3>Player 1 Score: <span id="totalscore1"></span><h3>
+    </div>
+
+    <div class="col-6">
+      <h2>Player 2:</h2>
+      <button class="btn btn-success" id="player2roll">Roll!</button>
+      <button class="btn btn-info" id="player2hold">Hold 'em!</button>
+      <h3>Dice Roll: <span id="diceroll2"></span><h3>
+      <h3>Round Score: <span id="roundscore2"></span><h3>
+      <h3>Player 2 Score: <span id="totalscore2"></span><h3>
+    </div>
+    
   </div>
 </div>
 </body>
-
 </html>
