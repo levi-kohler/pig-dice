@@ -9,7 +9,6 @@ function Player() {
   this.totalScore = 0;
 }
 
-//check if player rolled 1
 Player.prototype.rollOne = function() { 
   if (this.roll === 1) {
   return this.roundScore = 0;
@@ -18,13 +17,11 @@ Player.prototype.rollOne = function() {
   }
 }
 
-//math for if the player holds
 Player.prototype.hold = function () {
   this.totalScore += this.roundScore;
   this.roundScore = 0;
 }
 
-//math for checking for winner
 Player.prototype.checkWin = function() {
   if (this.totalScore >= 100) {
     alert("You won!")
