@@ -2,7 +2,7 @@
 
 #### Play a game of Pig Dice with a friend!
 
-#### By Levi Kohler & Scott O'Neil
+#### By Levi Kohler & Scott O'Neil & Louie Schoenknecht
 
 ## Technologies Used
 
@@ -25,15 +25,6 @@ SPEC 1: “If a player rolls a 2-6, that value will be added to their round scor
 
 **Expect:** (rollDice()).toEqual(1-6)
 
-SPEC 2: “If a player rolls a 1, their round total is 0 and their turn is over”
-
-SPEC 3: "On hold, round score is added to total score"
-
-SPEC 4: "If total score is 100 or more, game is over"
-
-SPEC 5: "Next player goes, starts from top"
-
-
 ## Setup/Installation Requirements
 
 * Clone this repo to your Desktop
@@ -42,8 +33,7 @@ SPEC 5: "Next player goes, starts from top"
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* Game will not reload after a player has won
 
 ## License
 
@@ -61,3 +51,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 kohler.la01@gmail.com
 scottieoneil@gmail.com
+luisesch97@gmail.com
